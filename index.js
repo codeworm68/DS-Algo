@@ -31,7 +31,9 @@ class LinkedList {
   }
 
   insert(index, value){
-    if (index == 0) {
+    if (index >= this.length) {
+      this.append(value);
+    } else if (index == 0) {
       this.prepend(value);
     } else {
       const newNode = new Node(value);
@@ -63,5 +65,5 @@ let myLinkedList = new LinkedList(10);
 myLinkedList.append(20);
 myLinkedList.append(30);
 myLinkedList.prepend(5);
-myLinkedList.insert(1, 15);
+myLinkedList.insert(100, 15);
 myLinkedList.printList();
